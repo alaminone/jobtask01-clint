@@ -3,10 +3,10 @@ import { Link, NavLink } from 'react-router-dom';
 // import Logo from '../../assets/calendar-with-checklist-date-schedule-3d-icon-removebg-preview.png';
 import { FaBars } from 'react-icons/fa';
 // import useAppContext from '../../Hooks/useAppContext';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 const Navbar = () => {
-    const authentication = useAppContext();
+    // const authentication = useAppContext();
     // const { user, logOut } = authentication;
     // const username = user?.displayName;
     // const photoUrl = user?.photoURL;
@@ -24,7 +24,7 @@ const Navbar = () => {
     // };
   
     return (
-      <div className="navbar bg-lightOne">
+      <div className="navbar bg-sl">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -77,7 +77,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex justify-center items-center">
-            <img src={Logo} width={100} height={100} alt="" />
+            <img src={''} width={100} height={100} alt="" />
             <h1 className="text-xl font-lora">Task Management</h1>
           </div>
         </div>
@@ -128,7 +128,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {user ? (
+          {'' ? (
             <div className="flex gap-8">
               <div className="flex justify-center items-center gap-4">
                 <h1 className="font-lora text-xl">{username}</h1>
