@@ -1,161 +1,76 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-// import Logo from '../../assets/calendar-with-checklist-date-schedule-3d-icon-removebg-preview.png';
 import { FaBars } from 'react-icons/fa';
-// import useAppContext from '../../Hooks/useAppContext';
-// import Swal from 'sweetalert2';
+import useAppContext from '../../hooks/AppContext/useAppContext';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
-    // const authentication = useAppContext();
-    // const { user, logOut } = authentication;
-    // const username = user?.displayName;
-    // const photoUrl = user?.photoURL;
-  
-    // const handleSignOut = () => {
-    //   logOut()
-    //     .then((result) => {
-    //       console.log(result);
-    //       Swal.fire({
-    //         icon: 'success',
-    //         text: 'Sign Out Successfully',
-    //       });
-    //     })
-    //     .catch((error) => console.log(error));
-    // };
-  
-    return (
-      <div className="navbar bg-sl">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <FaBars size={30} />
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <NavLink
-                to={'/'}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                    : 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                }
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to={'/contact'}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                    : 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                }
-              >
-                Contact
-              </NavLink>
-              <NavLink
-                to={'/about'}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                    : 'font-poppins text-darkOne  font-semibold px-4 text-2xl'
-                }
-              >
-                About
-              </NavLink>
-              <NavLink
-                to={'/feature'}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                    : 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                }
-              >
-                Feature
-              </NavLink>
-            </ul>
+  const authentication = useAppContext();
+  const { user, logOut } = authentication;
+  const username = user?.displayName;
+  const photoUrl = user?.photoURL;
+
+  const handleSignOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+        Swal.fire({
+          icon: 'success',
+          text: 'Sign Out Successfully',
+        });
+      })
+      .catch((error) => console.log(error));
+  };
+
+  return (
+    <div className="bg-gradient-to-r from-indigo-600 to-blue-500 p-4">
+      <div className="flex justify-between items-center container mx-auto">
+        <div className="flex items-center space-x-4">
+          <div className="lg:hidden">
+            <FaBars size={30} className="text-white" />
           </div>
-          <div className="flex justify-center items-center">
-            <img src={''} width={100} height={100} alt="" />
-            <h1 className="text-xl font-lora">Task Management</h1>
-          </div>
+          <Link to="/" className="text-white text-2xl font-bold">
+            Task Management
+          </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <div className="flex gap-8">
-              <NavLink
-                to={'/'}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                    : 'font-poppins text-white font-semibold px-4 text-2xl'
-                }
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to={'/contact'}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                    : 'font-poppins text-white font-semibold px-4 text-2xl'
-                }
-              >
-                Contact
-              </NavLink>
-              <NavLink
-                to={'/about'}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                    : 'font-poppins text-white font-semibold px-4 text-2xl'
-                }
-              >
-                About
-              </NavLink>
-              <NavLink
-                to={'/feature'}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-poppins text-darkOne font-semibold px-4 text-2xl'
-                    : 'font-poppins text-white font-semibold px-4 text-2xl'
-                }
-              >
-                Feature
-              </NavLink>
-            </div>
-          </ul>
+
+        <div className="hidden lg:flex items-center space-x-8">
+          <NavLink to="/" activeClassName="text-indigo-200" className="text-white">
+            Home
+          </NavLink>
+          <NavLink to="/contact" activeClassName="text-indigo-200" className="text-white">
+            Contact
+          </NavLink>
+          <NavLink to="/about" activeClassName="text-indigo-200" className="text-white">
+            About
+          </NavLink>
+          <NavLink to="/feature" activeClassName="text-indigo-200" className="text-white">
+            Feature
+          </NavLink>
         </div>
-        <div className="navbar-end">
-          {'' ? (
-            <div className="flex gap-8">
-              <div className="flex justify-center items-center gap-4">
-                <h1 className="font-lora text-xl">{username}</h1>
-                <img
-                  src={photoUrl}
-                  width={40}
-                  height={40}
-                  className="border-darkOne border-2 rounded-full"
-                  alt=""
-                />
-              </div>
-              <button
-                onClick={handleSignOut}
-                className="bg-darkOne text-lightThree px-8 py-2 text-xl font-lora rounded-lg hover:bg-transparent hover:text-darkOne border-2 border-darkOne"
-              >
+
+        <div className="flex items-center space-x-4">
+          {user ? (
+            <div className="flex items-center space-x-4">
+              <div className="text-white">{username}</div>
+              <img
+                src={photoUrl}
+                alt="User Avatar"
+                className="w-8 h-8 rounded-full border-2 border-white"
+              />
+              <button onClick={handleSignOut} className="text-white">
                 Sign Out
               </button>
             </div>
           ) : (
-            <Link to={'/login'}>
-              <button className="bg-darkOne text-lightThree px-8 py-2 text-xl font-lora rounded-lg hover:bg-transparent hover:text-darkOne border-2 border-darkOne">
-                Login
-              </button>
+            <Link to="/login" className="text-white">
+              Login
             </Link>
           )}
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
+
 export default Navbar;

@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import Marquee from 'react-fast-marquee';
+import usePublicApi from '../../hooks/publicapi/usePublicApi';
 
 
 const ClientSection = () => {
