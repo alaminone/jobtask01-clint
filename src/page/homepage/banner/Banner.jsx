@@ -9,10 +9,7 @@ const Banner = () => {
           <div className="hero-content text-center text-neutral-content">
             <div className="flex flex-col">
               <h1 className="font-playfairDisplay text-white font-normal capitalize text-xl md:text-2xl lg:text-3xl py-12 md:py-8 lg:p-12 leading-[2.5rem] md:leading-[3rem] lg:leading-[4rem]">
-                Stay organized with our intuitive task management system. Create,
-                assign, and track tasks effortlessly. <br /> Foster teamwork with
-                real-time collaboration features. Seamlessly communicate and share
-                updates with your team.
+              Effortlessly organize tasks, assign, and track progress with our intuitive system. Foster teamwork through real-time collaboration and seamless communication
               </h1>
               <div>
                 <Link to="/dashBroad">
