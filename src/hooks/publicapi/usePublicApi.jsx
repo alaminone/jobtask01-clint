@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const publicApi = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: 'https://jobtask-project-sarver.vercel.app',
 });
 
 const usePublicApi = () => {
